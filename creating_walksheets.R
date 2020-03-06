@@ -15,7 +15,7 @@ library(stringr)
 require(readr)
 
 # Open the voter file and add headers
-nyvoter <- read.table('Kings_20200127.txt',
+nyvoter <- read.table('workshop_voterfile.csv',
                      sep=",",
                      fill=TRUE,
                      row.names = NULL)

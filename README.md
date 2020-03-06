@@ -10,8 +10,7 @@ This repository includes the code to make walksheets to support the petitioning 
 #### Input
 Files needed to run the **creating_walksheets.R** script include:
   1. Voter file (**Kings_20200127.txt**)
-  2. Excel file containing the header names (**vf headers.xlsx**)
-  3. .csv containing corrected street names (**corrected_streets_20200210.csv**). Street names must be manually inputed to the file of "bad streets" generated at line 159 in the script (**streets_to_correct_2020.csv**).
+  2. .csv containing corrected street names (**corrected_streets_20200210.csv**). Street names must be manually inputed to the file of "bad streets" generated at line 159 in the script (**streets_to_correct_2020.csv**).
 
 Files needed to run the **creating_maps.R** script include:
   1. NYC election district shape file (**eds_nyc_20191215.shp**)

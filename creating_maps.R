@@ -15,11 +15,11 @@ require(tmap)
 require(tmaptools)
 require(leaflet)
 
-### import list of all eds in brooklyn
+### import list of all eds in brooklyn (this was created in creating_walksheets.R)
 ad_ed_list <- read.csv("ad_ed_list.csv")
 
-### importing the state and point shapefiles
-ed_shp <- st_read("eds_nyc_20191215.shp")
+### importing the new york city election district shapefiles
+ed_shp <- st_read("nyc_election_districts_201912.shp")
 
 bk_ed_shp <- ed_shp %>% 
   right_join(ad_ed_list, by = c("elect_dist" = "ad_ed"))
@@ -48,7 +48,7 @@ mapshot(lf, file = "test6.png")
 #############################
 
 #### ad_ed_list is the dataframe to loop through 
-#### use this first if you want to create new maps for a few districts to test
+#### use this first if you want to create new maps for a few districts to test the loop
 # aded_list <- ad_ed_list %>%
 #   filter(ad_ed == "56044" | ad_ed == "51082" |
 #            ad_ed == "45003")
@@ -76,5 +76,3 @@ for (ed in ad_ed){
   mapshot(lf, file = filename_aded)
 }
 
-
-#### That's it!

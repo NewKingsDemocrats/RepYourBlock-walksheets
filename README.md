@@ -4,13 +4,14 @@
 
 This repository includes the code to make walksheets to support the petitioning process.
 
+---
 
 ## How to use walksheets and maps scripts
 
 #### Input
 Files needed to run the **creating_walksheets.R** script include:
   1. Voter file (**workshop_voterfile.csv**)
-  2. .csv containing corrected street names (**corrected_streets_20200210.csv**). Street names must be manually inputed to the file of "bad streets" generated at line 159 in the script (**streets_to_correct_2020.csv**).
+  2. .csv containing corrected street names (**corrected_streets_20200210.csv**). Street names must be manually inputed to the file of "bad streets" generated at line 161 in the script (**streets_to_correct_2020.csv**).
 
 Files needed to run the **creating_maps.R** script include:
   1. NYC election district shape file (**eds_nyc_20191215.shp**)
@@ -19,7 +20,7 @@ Files needed to run the **creating_maps.R** script include:
 #### Running the scripts
 The **creating_walksheets.R** script should be run prior to running the **creating_maps.R** script. The working directory must contain a folder called **data** that includes all of the required files.
 
-After initial filtering of county, party, and active-status voters, the street names will need to be cleaned. The script subsets streets that are used less than 10 times (lines 148-159). These street names will have to be manually corrected and saved to a .csv file and inputed to the script at line 163. The format of the corrected streets file should look as follows:
+After initial filtering of county, party, and active-status voters, the street names will need to be corrected. It is recommended to created a uniform notation for streets with multiple spellings (9 St and 9th St; Ave and Avenue) and to correct commonly mispelled names (MacDonald, McDonald, Mc Donald). The script subsets streets that are used less than 10 times (lines 153-159). These street names will have to be manually corrected and saved to a .csv file and inputed to the script at line 165. The format of the corrected streets file should look as follows:
 
 |corrected	| og_name	| count|
 |----------|---------|--------|
@@ -30,6 +31,7 @@ After initial filtering of county, party, and active-status voters, the street n
 |AINSLIE ST	|AINCLIE ST |	1|
 |JORALEMON ST|JORALEM ST |	2|
 
+###### Note: To save time, skip the cleaning street names steps (lines 46-188)--the vast majority of the voters will still be in order.
 
 #### Output
 The **creating_walksheets.R** script will output folders for each AD with individual folders for each ED within it. In each ED folder will be digital verstion of a walksheet (**AD_ED_sheets.xlsx**) and a printable verstion (**AD_ED_printout.xlsx**).
@@ -37,6 +39,7 @@ The **creating_walksheets.R** script will output folders for each AD with indivi
   1. The printable version will fit to a standard 8.5"x11" page in the "portait" orientation.
   2. The digital version contains additional columns for tracking progress during door-knocking.
 
+---
 
   ## License
 

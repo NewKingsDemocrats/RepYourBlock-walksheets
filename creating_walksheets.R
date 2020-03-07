@@ -207,7 +207,6 @@ cleaned_dems_ <- cleaned_dems %>%
          buildingnum = as.numeric(gsub("[^0-9]", "", addnumber2)),
          aptnum = as.numeric(gsub("[^0-9]", "", addapt)),
          apt = gsub(" ","",addapt),
-         last_voted = substr(votehistory, 0, 11),
          status = "",
          not_home = "",
          moved = "",
@@ -220,7 +219,7 @@ cleaned_dems_ <- cleaned_dems %>%
          streetside = if_else((as.numeric(as.character(buildingnum)) %% 2 == 0),'even','odd')
   ) %>%
   select(ID, name, address, apt, age, gender,
-         ED, AD, last_voted, status, streetside,
+         ED, AD, status, streetside,
          clean_addstreet, addnumber, buildingnum, aptnum, votehistory, regdate,
          not_home, signed, moved, inaccessible, refused, email, notes)  %>%
   rename(`M/F` = gender)
